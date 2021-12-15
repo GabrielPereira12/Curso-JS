@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasil server</title>
+    <style>
+        body{
+            background: brown;
+            color: white;
+        }
+        input#txtn {
+            background: brown;
+            color: white;
+        }
+        input#v {
+            background: rgb(119, 5, 5);
+            color: white;
+        }
+        div {
+            font: normal 12pt Arial;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Verifique se você é brasileiro!!!</h1>
+    País onde vive:<input type="text" name="txtn" id="txtn">
+    <input id = "v" type="button" value="Verificar" onclick="verificar()">
+    <div id="res"></div>
+    <script>
+        
+        function verificar(){
+            var tex = window.document.querySelector('input#txtn')
+            var res = window.document.querySelector('div#res')
+            var t = String(tex.value)
+            res.innerHTML = `<p>Você vive em <strong>${t}</strong></p>`
+            if (t.toUpperCase() == 'BRASIL') {
+                res.innerHTML += "Você é brasileiro!"
+            }else if (t.toUpperCase() == 'PORTUGAL') {
+                res.innerHTML += 'Você é português!'
+            }else {
+                res.innerHTML += "Você é estrangeiro!"
+            }
+        } 
+    </script>
+</body>
+</html>
